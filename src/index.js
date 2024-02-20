@@ -9,8 +9,7 @@ import noticeRouter from "./routers/noticeRouter";
 const PORT = process.env.PORT;
 const app = express();
 const corsOptions = {
-  methods: ["GET", "POST"],
-  credentials: true,
+  origin: "*",
 };
 
 app.use(express.json());
