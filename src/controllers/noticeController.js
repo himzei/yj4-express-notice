@@ -21,7 +21,7 @@ export const noticeWrite = async (req, res) => {
     return res.send({ result: true, data });
   } catch (err) {
     console.log(err);
-    return res.send({ result: false });
+    return res.send({ err, result: false });
   }
 };
 export const noticeDetail = (req, res) => res.send({ name: "detail" });
