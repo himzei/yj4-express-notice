@@ -12,6 +12,7 @@ const corsOptions = {
     "http://localhost:5173",
     "http://localhost:3000",
   ],
+  credentials: true,
 };
 const PORT = process.env.PORT;
 const app = express();
