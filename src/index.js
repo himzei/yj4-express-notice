@@ -8,10 +8,14 @@ import noticeRouter from "./routers/noticeRouter";
 
 const PORT = process.env.PORT;
 const app = express();
+const corsOptions = {
+  methods: ["GET", "POST"],
+  credentials: true,
+};
 
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => res.send({ name: "kenJo" }));
 app.use("/notice", noticeRouter);

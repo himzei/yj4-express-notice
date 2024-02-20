@@ -9,7 +9,7 @@ import {
 
 const noticeRouter = express.Router();
 
-noticeRouter.get("", noticeList);
+noticeRouter.get("/", noticeList);
 noticeRouter.post("/write", noticeWrite);
 noticeRouter.get("/:id", noticeDetail);
 noticeRouter.post("/:id/edit", noticeEdit);
