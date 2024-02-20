@@ -6,20 +6,12 @@ import cors from "cors";
 import appleRouter from "./routers/appleRouter";
 import noticeRouter from "./routers/noticeRouter";
 
-const corsOptions = {
-  origin: [
-    "http://localhost:5172",
-    "http://localhost:5173",
-    "http://localhost:3000",
-  ],
-  credentials: true,
-};
 const PORT = process.env.PORT;
 const app = express();
 
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get("/", (req, res) => res.send({ name: "kenJo" }));
 app.use("/notice", noticeRouter);
